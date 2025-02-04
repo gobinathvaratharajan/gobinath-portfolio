@@ -2,23 +2,27 @@ import { getPostBySlug } from '@/lib/posts';
 import { MoveLeft } from 'lucide-react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import React from 'react'
+import React from 'react';
 import Link from 'next/link';
 import { formatDate } from '@/lib/utils';
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import MDXContent from '@/components/mdx-content';
 
+// type PageProps = {
+//   params: {
+//     slug: string;
+//   };
+// };
+// /* eslint-disable @typescript-eslint/no-explicit-any */
+export default async function Post({ params }: any) {
+  const { slug } = params;
+  const post = await getPostBySlug(slug);
 
-const Post = async ({params}: {params: {slug: string}}) => {
-    const { slug } = params;
-    const post = await getPostBySlug(slug)
+  if (!post) {
+    notFound();
+  }
 
-    if (!post) {
-        notFound()
-    }
-
-    const { metadata, content } = post;
-    const { title, image, author, publishedAt } = metadata;
+  const { metadata, content } = post;
+  const { title, image, author, publishedAt } = metadata;
 
   return (
     <section className='pb-24 pt-32'>
@@ -54,7 +58,5 @@ const Post = async ({params}: {params: {slug: string}}) => {
         </main>
       </div>
     </section>
-  )
+  );
 }
-
-export default Post;

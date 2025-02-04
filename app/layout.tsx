@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/providers';
 import Header from '@/components/header';
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       {/* Browser extension cause the hydration issue which can be fix with suppressHydrationWarning. */}
       <body
-        className={`${inter.variable} ${playFair.variable} flex flex-col min-h-screen font-sans antialiased`}
+        className={`${inter.variable} ${playFair.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
         <Providers>
           <Header />

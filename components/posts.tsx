@@ -1,7 +1,7 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import { PostMetadata } from '@/lib/posts'
-import { formatDate } from '@/lib/utils'
+import { PostMetadata } from '@/lib/posts';
+import { formatDate } from '@/lib/utils';
 
 const Posts = ({ posts }: { posts: PostMetadata[] }) => {
   return (
@@ -28,7 +28,7 @@ const Posts = ({ posts }: { posts: PostMetadata[] }) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
 export default Posts;

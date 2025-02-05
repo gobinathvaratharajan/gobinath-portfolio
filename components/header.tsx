@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Navigation from './navigation';
+// import authorImage from '@/images/authors/me.jpg';
 
 const Header = () => {
   return (

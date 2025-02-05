@@ -8,7 +8,7 @@ const RecentPost = async () => {
   return (
     <section className='pb-24'>
       <div>
-        <h2 className='title mb-12'>Recent Post</h2>
+        <h2 className='title mb-12'>Latest Post</h2>
         <Posts posts={posts} />
         <Link
           href='/posts'

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import authorImage from '@/public/images/authors/me.jpg';
 import { Button } from '@/components/ui/button';
-import { Video, Send } from 'lucide-react';
+import { Download, Send } from 'lucide-react';
+import Link from 'next/link';
 
 const Intro = () => {
   return (
@@ -13,9 +14,19 @@ const Intro = () => {
           learning new technologies and sharing knowledge with others.
         </p>
         <div className='mt-4 flex gap-3'>
-          <Button size='sm' variant='default'>
+          {/* <Button size='sm' variant='default'>
             <Video className='mr-2 h-4 w-4' />
             Book a call
+          </Button> */}
+          <Button size='sm' variant='default'>
+            <Download className='mr-2 h-4 w-4' />
+            <Link
+              href='https://drive.google.com/file/d/1dRUQ7vDRax0PBCbcQHyFxIiY2qyQYUqo/view'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Download CV
+            </Link>
           </Button>
           <Button size='sm' variant='outline'>
             <Send className='mr-2 h-4 w-4' /> Message

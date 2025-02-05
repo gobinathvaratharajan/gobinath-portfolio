@@ -1,31 +1,22 @@
-import React from 'react';
+'use client';
 import Link from 'next/link';
-import ThemeToggle from '@/components/theme-toggle';
+import Navigation from './navigation';
 
 const Header = () => {
   return (
-    <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-6 backdrop-blur-sm'>
-      <nav className='container flex max-w-3xl items-center justify-between'>
-        <div>
-          <Link href='/' className='font-serif text-2xl font-bold'>
-            GV
-          </Link>
+    <header className='container relative z-50 flex max-w-3xl flex-col'>
+      <div className='top-0 z-10 pt-6'>
+        <div className='flex gap-4'>
+          <div className='flex'>
+            <div>
+              <Link href='/' className='font-serif text-2xl font-bold'>
+                GV
+              </Link>
+            </div>
+          </div>
+          <Navigation />
         </div>
-        <ul className='flex items-center gap-6 text-base font-normal text-muted-foreground sm:gap-10'>
-          <li className='transition-colors hover:text-foreground'>
-            <Link href='/posts'>Posts</Link>
-          </li>
-          <li className='transition-colors hover:text-foreground'>
-            <Link href='/projects'>Project</Link>
-          </li>
-          <li className='transition-colors hover:text-foreground'>
-            <Link href='/contact'>Contact Me</Link>
-          </li>
-        </ul>
-        <div>
-          <ThemeToggle />
-        </div>
-      </nav>
+      </div>
     </header>
   );
 };

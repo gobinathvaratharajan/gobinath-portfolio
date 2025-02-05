@@ -1,33 +1,17 @@
-'use client';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Intro from '@/components/intro';
-import { useEffect, useState } from 'react';
-import { getSerializedContent } from '@/lib/getSerializedContent';
+import RecentPost from '@/components/recent-posts';
+import RecentProjects from '@/components/recent-projects';
 
-export default function Home() {
-  const [mdxContent, setMdxContent] = useState<MDXRemoteSerializeResult | null>(
-    null
-  );
-
-  useEffect(() => {
-    async function fetchData() {
-      const content = `
-                # This is my markdown
-                Here is some more content in **markdown** format.
-            `;
-      const mdx = await getSerializedContent(content);
-      setMdxContent(mdx);
-    }
-
-    fetchData();
-  }, []);
-
+const Home = () => {
   return (
     <section className='py-24'>
       <div className='container max-w-3xl'>
         <Intro />
-        {mdxContent ? <MDXRemote {...mdxContent} /> : <p>Loading...</p>}
+        <RecentProjects />
+        <RecentPost />
       </div>
     </section>
   );
-}
+};
+
+export default Home;
